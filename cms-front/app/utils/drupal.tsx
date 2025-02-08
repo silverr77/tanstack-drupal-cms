@@ -48,7 +48,10 @@ export const getNode = createServerFn({ method: "GET" })
     console.log({ data });
     return axios
       .get<any>(data)
-      .then((r) => deserialise(r.data)?.data)
+      .then((r) => {
+        console.log({r}, r.data)
+        return deserialise(r.data)?.data;
+      })
       .catch((err) => {
         console.error(err);
         if (err.status === 404) {
@@ -57,3 +60,5 @@ export const getNode = createServerFn({ method: "GET" })
         throw err;
       });
   });
+
+  

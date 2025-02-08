@@ -72,10 +72,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Meta />
       </head>
       <body>
-        <p>Header section</p>
-        <hr />
         {children}
-        <p>footer section</p>
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </body>
